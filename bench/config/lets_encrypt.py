@@ -79,7 +79,7 @@ def run_certbot_and_setup_ssl(site, custom_domain, bench_path, interactive=True)
 	else:
 		update_site_config(site, ssl_config, bench_path=bench_path)
 
-	make_nginx_conf(bench_path)
+	make_nginx_conf(bench_path, interactive == '-n')
 	service('nginx', 'start')
 
 
